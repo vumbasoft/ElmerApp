@@ -1,0 +1,24 @@
+<Solution>
+    <Configurations>
+        <Platform Name="Any CPU" />
+    </Configurations>
+    <Folder Name="/src/">
+        <Project Path="src/VumbaSoft.ErmanApp.Domain/VumbaSoft.ErmanApp.Domain.csproj" />
+        <Project Path="src/VumbaSoft.ErmanApp.Application/VumbaSoft.ErmanApp.Application.csproj" />
+        <Project Path="src/VumbaSoft.ErmanApp.EntityFrameworkCore/VumbaSoft.ErmanApp.EntityFrameworkCore.csproj" />
+        <Project Path="src/VumbaSoft.ErmanApp.Web/VumbaSoft.ErmanApp.Web.csproj" />
+        <Project Path="src/VumbaSoft.ErmanApp.Domain.Shared/VumbaSoft.ErmanApp.Domain.Shared.csproj" />
+        <Project Path="src/VumbaSoft.ErmanApp.Application.Contracts/VumbaSoft.ErmanApp.Application.Contracts.csproj" />
+        <Project Path="src/VumbaSoft.ErmanApp.HttpApi/VumbaSoft.ErmanApp.HttpApi.csproj" />
+        <Project Path="src/VumbaSoft.ErmanApp.HttpApi.Client/VumbaSoft.ErmanApp.HttpApi.Client.csproj" />
+        <Project Path="src/VumbaSoft.ErmanApp.DbMigrator/VumbaSoft.ErmanApp.DbMigrator.csproj" />
+    </Folder>
+    <Folder Name="/test/">
+        <Project Path="test/VumbaSoft.ErmanApp.Application.Tests/VumbaSoft.ErmanApp.Application.Tests.csproj" />
+        <Project Path="test/VumbaSoft.ErmanApp.Web.Tests/VumbaSoft.ErmanApp.Web.Tests.csproj" />
+        <Project Path="test/VumbaSoft.ErmanApp.EntityFrameworkCore.Tests/VumbaSoft.ErmanApp.EntityFrameworkCore.Tests.csproj" />
+        <Project Path="test/VumbaSoft.ErmanApp.TestBase/VumbaSoft.ErmanApp.TestBase.csproj" />
+        <Project Path="test/VumbaSoft.ErmanApp.Domain.Tests/VumbaSoft.ErmanApp.Domain.Tests.csproj" />
+        <Project Path="test/VumbaSoft.ErmanApp.HttpApi.Client.ConsoleTestApp/VumbaSoft.ErmanApp.HttpApi.Client.ConsoleTestApp.csproj" />
+    </Folder>
+</Solution>

@@ -1,0 +1,118 @@
+{
+  "template": "app",
+  "imports": {
+    "Volo.Abp.LeptonXLiteTheme": {
+      "version": "5.5.0",
+      "isInstalled": true,
+      "creationTime": "07/26/2026 23:51:20 +00:00"
+    },
+    "Volo.Abp.Account": {
+      "version": "10.5.0",
+      "isInstalled": true,
+      "creationTime": "07/26/2026 23:51:20 +00:00"
+    },
+    "Volo.Abp.OpenIddict": {
+      "version": "10.5.0",
+      "isInstalled": true,
+      "creationTime": "07/26/2026 23:51:20 +00:00"
+    },
+    "Volo.Abp.Identity": {
+      "version": "10.5.0",
+      "isInstalled": true,
+      "creationTime": "07/26/2026 23:51:20 +00:00"
+    },
+    "Volo.Abp.TenantManagement": {
+      "version": "10.5.0",
+      "isInstalled": true,
+      "creationTime": "07/26/2026 23:51:20 +00:00"
+    },
+    "Volo.Abp.SettingManagement": {
+      "version": "10.5.0",
+      "isInstalled": true,
+      "creationTime": "07/26/2026 23:51:20 +00:00"
+    },
+    "Volo.Abp.PermissionManagement": {
+      "version": "10.5.0",
+      "isInstalled": true,
+      "creationTime": "07/26/2026 23:51:20 +00:00"
+    },
+    "Volo.Abp.FeatureManagement": {
+      "version": "10.5.0",
+      "isInstalled": true,
+      "creationTime": "07/26/2026 23:51:20 +00:00"
+    },
+    "Volo.Abp.BlobStoring.Database": {
+      "version": "10.5.0",
+      "isInstalled": true,
+      "creationTime": "07/26/2026 23:51:20 +00:00"
+    }
+  },
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "VumbaSoft.ErmanApp.Application": {
+      "path": "src/VumbaSoft.ErmanApp.Application/VumbaSoft.ErmanApp.Application.abppkg",
+      "folder": "src"
+    },
+    "VumbaSoft.ErmanApp.Application.Tests": {
+      "path": "test/VumbaSoft.ErmanApp.Application.Tests/VumbaSoft.ErmanApp.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "VumbaSoft.ErmanApp.Domain.Shared": {
+      "path": "src/VumbaSoft.ErmanApp.Domain.Shared/VumbaSoft.ErmanApp.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "VumbaSoft.ErmanApp.Application.Contracts": {
+      "path": "src/VumbaSoft.ErmanApp.Application.Contracts/VumbaSoft.ErmanApp.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "VumbaSoft.ErmanApp.HttpApi": {
+      "path": "src/VumbaSoft.ErmanApp.HttpApi/VumbaSoft.ErmanApp.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "VumbaSoft.ErmanApp.HttpApi.Client": {
+      "path": "src/VumbaSoft.ErmanApp.HttpApi.Client/VumbaSoft.ErmanApp.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "VumbaSoft.ErmanApp.Web": {
+      "path": "src/VumbaSoft.ErmanApp.Web/VumbaSoft.ErmanApp.Web.abppkg",
+      "folder": "src"
+    },
+    "VumbaSoft.ErmanApp.Web.Tests": {
+      "path": "test/VumbaSoft.ErmanApp.Web.Tests/VumbaSoft.ErmanApp.Web.Tests.abppkg",
+      "folder": "test"
+    },
+    "VumbaSoft.ErmanApp.EntityFrameworkCore.Tests": {
+      "path": "test/VumbaSoft.ErmanApp.EntityFrameworkCore.Tests/VumbaSoft.ErmanApp.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "VumbaSoft.ErmanApp.EntityFrameworkCore": {
+      "path": "src/VumbaSoft.ErmanApp.EntityFrameworkCore/VumbaSoft.ErmanApp.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "VumbaSoft.ErmanApp.TestBase": {
+      "path": "test/VumbaSoft.ErmanApp.TestBase/VumbaSoft.ErmanApp.TestBase.abppkg",
+      "folder": "test"
+    },
+    "VumbaSoft.ErmanApp.Domain.Tests": {
+      "path": "test/VumbaSoft.ErmanApp.Domain.Tests/VumbaSoft.ErmanApp.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "VumbaSoft.ErmanApp.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/VumbaSoft.ErmanApp.HttpApi.Client.ConsoleTestApp/VumbaSoft.ErmanApp.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "VumbaSoft.ErmanApp.DbMigrator": {
+      "path": "src/VumbaSoft.ErmanApp.DbMigrator/VumbaSoft.ErmanApp.DbMigrator.abppkg",
+      "folder": "src"
+    },
+    "VumbaSoft.ErmanApp.Domain": {
+      "path": "src/VumbaSoft.ErmanApp.Domain/VumbaSoft.ErmanApp.Domain.abppkg",
+      "folder": "src"
+    }
+  }
+}
