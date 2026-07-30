@@ -1,0 +1,24 @@
+@page
+@using VumbaSoft.ErmanApp.Localization
+@using VumbaSoft.ErmanApp.Web.Pages.Demographics.StateProvinces
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@model CreateModalModel
+@inject IStringLocalizer<ErmanAppResource> L
+@{
+    Layout = null;
+}
+<form asp-page="/Demographics/StateProvinces/CreateModal">
+    <abp-modal>
+        <abp-modal-header title="@L["NewStateProvince"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-input asp-for="StateProvince.Name" />
+            <abp-select asp-for="StateProvince.CountryId" asp-items="Model.Countries" label="@L["Country"].Value" />
+            <abp-input asp-for="StateProvince.Population" />
+            <abp-input asp-for="StateProvince.RegionCode" />
+            <abp-input asp-for="StateProvince.StateProvinceCode" />
+            <abp-input asp-for="StateProvince.Remarks" />
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</form>

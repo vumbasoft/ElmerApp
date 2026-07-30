@@ -1,0 +1,25 @@
+@page
+@using VumbaSoft.ErmanApp.Localization
+@using VumbaSoft.ErmanApp.Web.Pages.Demographics.DistrictCities
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@model CreateModalModel
+@inject IStringLocalizer<ErmanAppResource> L
+@{
+    Layout = null;
+}
+<form asp-page="/Demographics/DistrictCities/CreateModal">
+    <abp-modal>
+        <abp-modal-header title="@L["NewDistrictCity"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-input asp-for="DistrictCity.Name" />
+            <abp-select asp-for="DistrictCity.StateProvinceId" asp-items="Model.StateProvinces" label="@L["StateProvince"].Value" />
+            <abp-input asp-for="DistrictCity.Population" />
+            <abp-input asp-for="DistrictCity.CountryCode" />
+            <abp-input asp-for="DistrictCity.Latitude" />
+            <abp-input asp-for="DistrictCity.Longitude" />
+            <abp-input asp-for="DistrictCity.Remarks" />
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</form>

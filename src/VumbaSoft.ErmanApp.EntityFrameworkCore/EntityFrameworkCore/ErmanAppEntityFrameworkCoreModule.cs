@@ -14,6 +14,13 @@ using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.BlobStoring.Database.EntityFrameworkCore;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using Volo.Abp.Studio;
+using VumbaSoft.ErmanApp.Demographics.Continents;
+using VumbaSoft.ErmanApp.Demographics.Subcontinents;
+using VumbaSoft.ErmanApp.Demographics.Regions;
+using VumbaSoft.ErmanApp.Demographics.Countries;
+using VumbaSoft.ErmanApp.Demographics.StateProvinces;
+using VumbaSoft.ErmanApp.Demographics.DistrictCities;
+using VumbaSoft.ErmanApp.Demographics.Localities;
 
 namespace VumbaSoft.ErmanApp.EntityFrameworkCore;
 
@@ -45,6 +52,13 @@ public class ErmanAppEntityFrameworkCoreModule : AbpModule
                 /* Remove "includeAllEntities: true" to create
                  * default repositories only for aggregate roots */
             options.AddDefaultRepositories(includeAllEntities: true);
+            options.AddRepository<Continent, EfCoreContinentRepository>();
+            options.AddRepository<Subcontinent, EfCoreSubcontinentRepository>();
+            options.AddRepository<Region, EfCoreRegionRepository>();
+            options.AddRepository<Country, EfCoreCountryRepository>();
+            options.AddRepository<StateProvince, EfCoreStateProvinceRepository>();
+            options.AddRepository<DistrictCity, EfCoreDistrictCityRepository>();
+            options.AddRepository<Locality, EfCoreLocalityRepository>();
         });
 
         if (AbpStudioAnalyzeHelper.IsInAnalyzeMode)

@@ -1,0 +1,32 @@
+@page
+@using VumbaSoft.ErmanApp.Localization
+@using VumbaSoft.ErmanApp.Web.Pages.Demographics.Countries
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@model CreateModalModel
+@inject IStringLocalizer<ErmanAppResource> L
+@{
+    Layout = null;
+}
+<form asp-page="/Demographics/Countries/CreateModal">
+    <abp-modal>
+        <abp-modal-header title="@L["NewCountry"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-input asp-for="Country.Name" />
+            <abp-select asp-for="Country.RegionId" asp-items="Model.Regions" label="@L["Region"].Value" />
+            <abp-input asp-for="Country.Population" />
+            <abp-input asp-for="Country.FormalName" />
+            <abp-input asp-for="Country.NativeName" />
+            <abp-input asp-for="Country.ISO3" />
+            <abp-input asp-for="Country.ISO2" />
+            <abp-input asp-for="Country.CCN3" />
+            <abp-input asp-for="Country.PhoneCode" />
+            <abp-input asp-for="Country.Capital" />
+            <abp-input asp-for="Country.Currency" />
+            <abp-input asp-for="Country.Emoji" />
+            <abp-input asp-for="Country.EmojiU" />
+            <abp-input asp-for="Country.Remarks" />
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</form>

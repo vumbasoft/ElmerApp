@@ -1,0 +1,31 @@
+@page
+@using VumbaSoft.ErmanApp.Localization
+@using VumbaSoft.ErmanApp.Permissions
+@using VumbaSoft.ErmanApp.Web.Pages.Demographics.Countries
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.Extensions.Localization
+@model IndexModel
+@inject IStringLocalizer<ErmanAppResource> L
+@inject IAuthorizationService AuthorizationService
+@section scripts
+{
+    <abp-script src="/Pages/Demographics/Countries/Index.js" />
+}
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>@L["Menu:Countries"]</abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-end">
+                @if (await AuthorizationService.IsGrantedAsync(ErmanAppPermissions.Countries.Create))
+                {
+                    <abp-button id="NewCountryButton" text="@L["NewCountry"].Value" icon="plus" button-type="Primary" />
+                }
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="CountriesTable"></abp-table>
+    </abp-card-body>
+</abp-card>

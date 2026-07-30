@@ -1,0 +1,31 @@
+@page
+@using VumbaSoft.ErmanApp.Localization
+@using VumbaSoft.ErmanApp.Permissions
+@using VumbaSoft.ErmanApp.Web.Pages.Demographics.Regions
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.Extensions.Localization
+@model IndexModel
+@inject IStringLocalizer<ErmanAppResource> L
+@inject IAuthorizationService AuthorizationService
+@section scripts
+{
+    <abp-script src="/Pages/Demographics/Regions/Index.js" />
+}
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>@L["Menu:Regions"]</abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-end">
+                @if (await AuthorizationService.IsGrantedAsync(ErmanAppPermissions.Regions.Create))
+                {
+                    <abp-button id="NewRegionButton" text="@L["NewRegion"].Value" icon="plus" button-type="Primary" />
+                }
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="RegionsTable"></abp-table>
+    </abp-card-body>
+</abp-card>

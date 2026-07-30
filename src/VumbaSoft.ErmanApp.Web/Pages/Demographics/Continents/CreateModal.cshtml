@@ -1,0 +1,17 @@
+@page
+@using VumbaSoft.ErmanApp.Localization
+@using VumbaSoft.ErmanApp.Web.Pages.Demographics.Continents
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@model CreateModalModel
+@inject IStringLocalizer<ErmanAppResource> L
+@{
+    Layout = null;
+}
+<abp-dynamic-form abp-model="Continent" asp-page="/Demographics/Continents/CreateModal">
+    <abp-modal>
+        <abp-modal-header title="@L["NewContinent"].Value"></abp-modal-header>
+        <abp-modal-body><abp-form-content /></abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</abp-dynamic-form>

@@ -69,6 +69,56 @@ public class ErmanAppMenuContributor : IMenuContributor
             )
         );
 
+        context.Menu.AddItem(
+            new ApplicationMenuItem(
+                "Demographics",
+                l["Menu:Demographics"],
+                icon: "fa fa-globe"
+            ).AddItem(
+                new ApplicationMenuItem(
+                    "Demographics.Continents",
+                    l["Menu:Continents"],
+                    url: "/Demographics/Continents"
+                ).RequirePermissions(ErmanAppPermissions.Continents.Default)
+            ).AddItem(
+                new ApplicationMenuItem(
+                    "Demographics.Subcontinents",
+                    l["Menu:Subcontinents"],
+                    url: "/Demographics/Subcontinents"
+                ).RequirePermissions(ErmanAppPermissions.Subcontinents.Default)
+            ).AddItem(
+                new ApplicationMenuItem(
+                    "Demographics.Regions",
+                    l["Menu:Regions"],
+                    url: "/Demographics/Regions"
+                ).RequirePermissions(ErmanAppPermissions.Regions.Default)
+            ).AddItem(
+                new ApplicationMenuItem(
+                    "Demographics.Countries",
+                    l["Menu:Countries"],
+                    url: "/Demographics/Countries"
+                ).RequirePermissions(ErmanAppPermissions.Countries.Default)
+            ).AddItem(
+                new ApplicationMenuItem(
+                    "Demographics.StateProvinces",
+                    l["Menu:StateProvinces"],
+                    url: "/Demographics/StateProvinces"
+                ).RequirePermissions(ErmanAppPermissions.StateProvinces.Default)
+            ).AddItem(
+                new ApplicationMenuItem(
+                    "Demographics.DistrictCities",
+                    l["Menu:DistrictCities"],
+                    url: "/Demographics/DistrictCities"
+                ).RequirePermissions(ErmanAppPermissions.DistrictCities.Default)
+            ).AddItem(
+                new ApplicationMenuItem(
+                    "Demographics.Localities",
+                    l["Menu:Localities"],
+                    url: "/Demographics/Localities"
+                ).RequirePermissions(ErmanAppPermissions.Localities.Default)
+            )
+        );
+
         return Task.CompletedTask;
     }
 }
