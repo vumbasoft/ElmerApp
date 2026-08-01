@@ -15,35 +15,35 @@ public class CreateUpdateCountryDto
     public long Population { get; set; }
 
     [StringLength(CountryConsts.MaxRemarksLength)]
-    public string Remarks { get; set; }
+    public string? Remarks { get; set; }
 
     [StringLength(CountryConsts.MaxFormalNameLength)]
-    public string FormalName { get; set; }
+    public string? FormalName { get; set; }
 
     [StringLength(CountryConsts.MaxNativeNameLength)]
-    public string NativeName { get; set; }
+    public string? NativeName { get; set; }
 
     [StringLength(CountryConsts.MaxIso3Length)]
-    public string ISO3 { get; set; }
+    public string? ISO3 { get; set; }
 
     [StringLength(CountryConsts.MaxIso2Length)]
-    public string ISO2 { get; set; }
+    public string? ISO2 { get; set; }
 
     [StringLength(CountryConsts.MaxCcn3Length)]
-    public string CCN3 { get; set; }
+    public string? CCN3 { get; set; }
 
     [StringLength(CountryConsts.MaxPhoneCodeLength)]
-    public string PhoneCode { get; set; }
+    public string? PhoneCode { get; set; }
 
     [StringLength(CountryConsts.MaxCapitalLength)]
-    public string Capital { get; set; }
+    public string? Capital { get; set; }
 
     [StringLength(CountryConsts.MaxCurrencyLength)]
-    public string Currency { get; set; }
+    public string? Currency { get; set; }
 
     [StringLength(CountryConsts.MaxEmojiLength)]
-    public string Emoji { get; set; }
+    public string? Emoji { get; set; }
 
     [StringLength(CountryConsts.MaxEmojiULength)]
-    public string EmojiU { get; set; }
+    public string? EmojiU { get; set; }
 }

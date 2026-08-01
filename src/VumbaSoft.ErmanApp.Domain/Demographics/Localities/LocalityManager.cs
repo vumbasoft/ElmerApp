@@ -23,9 +23,9 @@ public class LocalityManager : DomainService
         Guid districtCityId,
         string name,
         long population = 0,
-        string remarks = null,
-        string districtCityCode = null,
-        string localityCode = null,
+        string? remarks = null,
+        string? districtCityCode = null,
+        string? localityCode = null,
         decimal latitude = 0,
         decimal longitude = 0)
     {

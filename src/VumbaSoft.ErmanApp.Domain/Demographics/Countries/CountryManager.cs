@@ -23,17 +23,17 @@ public class CountryManager : DomainService
         Guid regionId,
         string name,
         long population = 0,
-        string remarks = null,
-        string formalName = null,
-        string nativeName = null,
-        string iso3 = null,
-        string iso2 = null,
-        string ccn3 = null,
-        string phoneCode = null,
-        string capital = null,
-        string currency = null,
-        string emoji = null,
-        string emojiU = null)
+        string? remarks = null,
+        string? formalName = null,
+        string? nativeName = null,
+        string? iso3 = null,
+        string? iso2 = null,
+        string? ccn3 = null,
+        string? phoneCode = null,
+        string? capital = null,
+        string? currency = null,
+        string? emoji = null,
+        string? emojiU = null)
     {
         var region = await _regionRepository.FindAsync(regionId);
         if (region == null)

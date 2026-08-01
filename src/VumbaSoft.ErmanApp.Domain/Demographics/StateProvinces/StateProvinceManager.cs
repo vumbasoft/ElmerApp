@@ -23,9 +23,9 @@ public class StateProvinceManager : DomainService
         Guid countryId,
         string name,
         long population = 0,
-        string remarks = null,
-        string regionCode = null,
-        string stateProvinceCode = null)
+        string? remarks = null,
+        string? regionCode = null,
+        string? stateProvinceCode = null)
     {
         var country = await _countryRepository.FindAsync(countryId);
         if (country == null)

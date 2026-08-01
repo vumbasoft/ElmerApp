@@ -23,8 +23,8 @@ public class DistrictCityManager : DomainService
         Guid stateProvinceId,
         string name,
         long population = 0,
-        string remarks = null,
-        string countryCode = null,
+        string? remarks = null,
+        string? countryCode = null,
         decimal latitude = 0,
         decimal longitude = 0)
     {

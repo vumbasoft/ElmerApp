@@ -10,8 +10,8 @@ public class DistrictCity : FullAuditedAggregateRoot<Guid>
     public virtual Guid StateProvinceId { get; private set; }
     public virtual string Name { get; private set; }
     public virtual long Population { get; private set; }
-    public virtual string Remarks { get; private set; }
-    public virtual string CountryCode { get; private set; }
+    public virtual string? Remarks { get; private set; }
+    public virtual string? CountryCode { get; private set; }
     public virtual decimal Latitude { get; private set; }
     public virtual decimal Longitude { get; private set; }
 
@@ -24,8 +24,8 @@ public class DistrictCity : FullAuditedAggregateRoot<Guid>
         Guid stateProvinceId,
         [NotNull] string name,
         long population = 0,
-        string remarks = null,
-        string countryCode = null,
+        string? remarks = null,
+        string? countryCode = null,
         decimal latitude = 0,
         decimal longitude = 0)
         : base(id)
@@ -62,13 +62,13 @@ public class DistrictCity : FullAuditedAggregateRoot<Guid>
         return this;
     }
 
-    public DistrictCity SetRemarks(string remarks)
+    public DistrictCity SetRemarks(string? remarks)
     {
         Remarks = Check.Length(remarks, nameof(remarks), DistrictCityConsts.MaxRemarksLength);
         return this;
     }
 
-    public DistrictCity SetCountryCode(string countryCode)
+    public DistrictCity SetCountryCode(string? countryCode)
     {
         CountryCode = Check.Length(countryCode, nameof(countryCode), DistrictCityConsts.MaxCountryCodeLength);
         return this;

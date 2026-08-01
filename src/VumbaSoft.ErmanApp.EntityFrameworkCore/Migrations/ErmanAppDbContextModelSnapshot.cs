@@ -2179,12 +2179,10 @@ namespace VumbaSoft.ErmanApp.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CCN3")
-                        .IsRequired()
                         .HasMaxLength(6)
                         .HasColumnType("nvarchar(6)");
 
                     b.Property<string>("Capital")
-                        .IsRequired()
                         .HasMaxLength(128)
                         .HasColumnType("nvarchar(128)");
 
@@ -2204,7 +2202,6 @@ namespace VumbaSoft.ErmanApp.Migrations
                         .HasColumnName("CreatorId");
 
                     b.Property<string>("Currency")
-                        .IsRequired()
                         .HasMaxLength(12)
                         .HasColumnType("nvarchar(12)");
 
@@ -2217,12 +2214,10 @@ namespace VumbaSoft.ErmanApp.Migrations
                         .HasColumnName("DeletionTime");
 
                     b.Property<string>("Emoji")
-                        .IsRequired()
                         .HasMaxLength(16)
                         .HasColumnType("nvarchar(16)");
 
                     b.Property<string>("EmojiU")
-                        .IsRequired()
                         .HasMaxLength(16)
                         .HasColumnType("nvarchar(16)");
 
@@ -2232,17 +2227,14 @@ namespace VumbaSoft.ErmanApp.Migrations
                         .HasColumnName("ExtraProperties");
 
                     b.Property<string>("FormalName")
-                        .IsRequired()
                         .HasMaxLength(128)
                         .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("ISO2")
-                        .IsRequired()
                         .HasMaxLength(4)
                         .HasColumnType("nvarchar(4)");
 
                     b.Property<string>("ISO3")
-                        .IsRequired()
                         .HasMaxLength(6)
                         .HasColumnType("nvarchar(6)");
 
@@ -2266,12 +2258,10 @@ namespace VumbaSoft.ErmanApp.Migrations
                         .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("NativeName")
-                        .IsRequired()
                         .HasMaxLength(128)
                         .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("PhoneCode")
-                        .IsRequired()
                         .HasMaxLength(16)
                         .HasColumnType("nvarchar(16)");
 
@@ -2282,7 +2272,6 @@ namespace VumbaSoft.ErmanApp.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Remarks")
-                        .IsRequired()
                         .HasMaxLength(1024)
                         .HasColumnType("nvarchar(1024)");
 
@@ -2308,7 +2297,6 @@ namespace VumbaSoft.ErmanApp.Migrations
                         .HasColumnName("ConcurrencyStamp");
 
                     b.Property<string>("CountryCode")
-                        .IsRequired()
                         .HasMaxLength(3)
                         .HasColumnType("nvarchar(3)");
 
@@ -2364,7 +2352,6 @@ namespace VumbaSoft.ErmanApp.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("Remarks")
-                        .IsRequired()
                         .HasMaxLength(1024)
                         .HasColumnType("nvarchar(1024)");
 
@@ -2409,7 +2396,6 @@ namespace VumbaSoft.ErmanApp.Migrations
                         .HasColumnName("DeletionTime");
 
                     b.Property<string>("DistrictCityCode")
-                        .IsRequired()
                         .HasMaxLength(3)
                         .HasColumnType("nvarchar(3)");
 
@@ -2440,7 +2426,6 @@ namespace VumbaSoft.ErmanApp.Migrations
                         .HasColumnType("decimal(11,9)");
 
                     b.Property<string>("LocalityCode")
-                        .IsRequired()
                         .HasMaxLength(3)
                         .HasColumnType("nvarchar(3)");
 
@@ -2457,7 +2442,6 @@ namespace VumbaSoft.ErmanApp.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("Remarks")
-                        .IsRequired()
                         .HasMaxLength(1024)
                         .HasColumnType("nvarchar(1024)");
 
@@ -2526,7 +2510,6 @@ namespace VumbaSoft.ErmanApp.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("Remarks")
-                        .IsRequired()
                         .HasMaxLength(1024)
                         .HasColumnType("nvarchar(1024)");
 
@@ -2601,17 +2584,14 @@ namespace VumbaSoft.ErmanApp.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("RegionCode")
-                        .IsRequired()
                         .HasMaxLength(6)
                         .HasColumnType("nvarchar(6)");
 
                     b.Property<string>("Remarks")
-                        .IsRequired()
                         .HasMaxLength(1024)
                         .HasColumnType("nvarchar(1024)");
 
                     b.Property<string>("StateProvinceCode")
-                        .IsRequired()
                         .HasMaxLength(6)
                         .HasColumnType("nvarchar(6)");
 
@@ -2683,7 +2663,6 @@ namespace VumbaSoft.ErmanApp.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("Remarks")
-                        .IsRequired()
                         .HasMaxLength(1024)
                         .HasColumnType("nvarchar(1024)");
 

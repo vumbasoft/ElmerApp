@@ -10,13 +10,13 @@ public class Region : FullAuditedAggregateRoot<Guid>
     public virtual Guid SubcontinentId { get; private set; }
     public virtual string Name { get; private set; }
     public virtual long Population { get; private set; }
-    public virtual string Remarks { get; private set; }
+    public virtual string? Remarks { get; private set; }
 
     protected Region()
     {
     }
 
-    public Region(Guid id, Guid subcontinentId, [NotNull] string name, long population = 0, string remarks = null)
+    public Region(Guid id, Guid subcontinentId, [NotNull] string name, long population = 0, string? remarks = null)
         : base(id)
     {
         SetSubcontinentId(subcontinentId);
@@ -48,7 +48,7 @@ public class Region : FullAuditedAggregateRoot<Guid>
         return this;
     }
 
-    public Region SetRemarks(string remarks)
+    public Region SetRemarks(string? remarks)
     {
         Remarks = Check.Length(remarks, nameof(remarks), RegionConsts.MaxRemarksLength);
         return this;

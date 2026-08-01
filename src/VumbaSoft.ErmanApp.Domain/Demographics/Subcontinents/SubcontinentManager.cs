@@ -20,7 +20,7 @@ public class SubcontinentManager : DomainService
     }
 
     public async Task<Subcontinent> CreateAsync(
-        Guid continentId, string name, long population = 0, string remarks = null)
+        Guid continentId, string name, long population = 0, string? remarks = null)
     {
         var continent = await _continentRepository.FindAsync(continentId);
         if (continent == null)

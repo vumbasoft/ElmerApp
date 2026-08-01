@@ -10,9 +10,9 @@ public class StateProvince : FullAuditedAggregateRoot<Guid>
     public virtual Guid CountryId { get; private set; }
     public virtual string Name { get; private set; }
     public virtual long Population { get; private set; }
-    public virtual string Remarks { get; private set; }
-    public virtual string RegionCode { get; private set; }
-    public virtual string StateProvinceCode { get; private set; }
+    public virtual string? Remarks { get; private set; }
+    public virtual string? RegionCode { get; private set; }
+    public virtual string? StateProvinceCode { get; private set; }
 
     protected StateProvince()
     {
@@ -23,9 +23,9 @@ public class StateProvince : FullAuditedAggregateRoot<Guid>
         Guid countryId,
         [NotNull] string name,
         long population = 0,
-        string remarks = null,
-        string regionCode = null,
-        string stateProvinceCode = null)
+        string? remarks = null,
+        string? regionCode = null,
+        string? stateProvinceCode = null)
         : base(id)
     {
         SetCountryId(countryId);
@@ -59,19 +59,19 @@ public class StateProvince : FullAuditedAggregateRoot<Guid>
         return this;
     }
 
-    public StateProvince SetRemarks(string remarks)
+    public StateProvince SetRemarks(string? remarks)
     {
         Remarks = Check.Length(remarks, nameof(remarks), StateProvinceConsts.MaxRemarksLength);
         return this;
     }
 
-    public StateProvince SetRegionCode(string regionCode)
+    public StateProvince SetRegionCode(string? regionCode)
     {
         RegionCode = Check.Length(regionCode, nameof(regionCode), StateProvinceConsts.MaxRegionCodeLength);
         return this;
     }
 
-    public StateProvince SetStateProvinceCode(string stateProvinceCode)
+    public StateProvince SetStateProvinceCode(string? stateProvinceCode)
     {
         StateProvinceCode = Check.Length(stateProvinceCode, nameof(stateProvinceCode), StateProvinceConsts.MaxStateProvinceCodeLength);
         return this;

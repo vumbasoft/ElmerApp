@@ -15,5 +15,5 @@ public class CreateUpdateRegionDto
     public long Population { get; set; }
 
     [StringLength(RegionConsts.MaxRemarksLength)]
-    public string Remarks { get; set; }
+    public string? Remarks { get; set; }
 }

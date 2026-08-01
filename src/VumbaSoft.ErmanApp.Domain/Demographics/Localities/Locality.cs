@@ -10,9 +10,9 @@ public class Locality : FullAuditedAggregateRoot<Guid>
     public virtual Guid DistrictCityId { get; private set; }
     public virtual string Name { get; private set; }
     public virtual long Population { get; private set; }
-    public virtual string Remarks { get; private set; }
-    public virtual string DistrictCityCode { get; private set; }
-    public virtual string LocalityCode { get; private set; }
+    public virtual string? Remarks { get; private set; }
+    public virtual string? DistrictCityCode { get; private set; }
+    public virtual string? LocalityCode { get; private set; }
     public virtual decimal Latitude { get; private set; }
     public virtual decimal Longitude { get; private set; }
 
@@ -25,9 +25,9 @@ public class Locality : FullAuditedAggregateRoot<Guid>
         Guid districtCityId,
         [NotNull] string name,
         long population = 0,
-        string remarks = null,
-        string districtCityCode = null,
-        string localityCode = null,
+        string? remarks = null,
+        string? districtCityCode = null,
+        string? localityCode = null,
         decimal latitude = 0,
         decimal longitude = 0)
         : base(id)
@@ -65,19 +65,19 @@ public class Locality : FullAuditedAggregateRoot<Guid>
         return this;
     }
 
-    public Locality SetRemarks(string remarks)
+    public Locality SetRemarks(string? remarks)
     {
         Remarks = Check.Length(remarks, nameof(remarks), LocalityConsts.MaxRemarksLength);
         return this;
     }
 
-    public Locality SetDistrictCityCode(string districtCityCode)
+    public Locality SetDistrictCityCode(string? districtCityCode)
     {
         DistrictCityCode = Check.Length(districtCityCode, nameof(districtCityCode), LocalityConsts.MaxDistrictCityCodeLength);
         return this;
     }
 
-    public Locality SetLocalityCode(string localityCode)
+    public Locality SetLocalityCode(string? localityCode)
     {
         LocalityCode = Check.Length(localityCode, nameof(localityCode), LocalityConsts.MaxLocalityCodeLength);
         return this;

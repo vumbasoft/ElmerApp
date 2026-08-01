@@ -15,10 +15,10 @@ public class CreateUpdateDistrictCityDto
     public long Population { get; set; }
 
     [StringLength(DistrictCityConsts.MaxRemarksLength)]
-    public string Remarks { get; set; }
+    public string? Remarks { get; set; }
 
     [StringLength(DistrictCityConsts.MaxCountryCodeLength)]
-    public string CountryCode { get; set; }
+    public string? CountryCode { get; set; }
 
     public decimal Latitude { get; set; }
 

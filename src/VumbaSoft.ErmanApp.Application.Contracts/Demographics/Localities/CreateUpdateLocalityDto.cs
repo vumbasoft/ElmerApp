@@ -15,13 +15,13 @@ public class CreateUpdateLocalityDto
     public long Population { get; set; }
 
     [StringLength(LocalityConsts.MaxRemarksLength)]
-    public string Remarks { get; set; }
+    public string? Remarks { get; set; }
 
     [StringLength(LocalityConsts.MaxDistrictCityCodeLength)]
-    public string DistrictCityCode { get; set; }
+    public string? DistrictCityCode { get; set; }
 
     [StringLength(LocalityConsts.MaxLocalityCodeLength)]
-    public string LocalityCode { get; set; }
+    public string? LocalityCode { get; set; }
 
     public decimal Latitude { get; set; }
 

@@ -9,7 +9,7 @@ public class StateProvinceDto : FullAuditedEntityDto<Guid>
     public string CountryName { get; set; }
     public string Name { get; set; }
     public long Population { get; set; }
-    public string Remarks { get; set; }
-    public string RegionCode { get; set; }
-    public string StateProvinceCode { get; set; }
+    public string? Remarks { get; set; }
+    public string? RegionCode { get; set; }
+    public string? StateProvinceCode { get; set; }
 }

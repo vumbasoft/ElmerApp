@@ -9,8 +9,8 @@ public class DistrictCityDto : FullAuditedEntityDto<Guid>
     public string StateProvinceName { get; set; }
     public string Name { get; set; }
     public long Population { get; set; }
-    public string Remarks { get; set; }
-    public string CountryCode { get; set; }
+    public string? Remarks { get; set; }
+    public string? CountryCode { get; set; }
     public decimal Latitude { get; set; }
     public decimal Longitude { get; set; }
 }

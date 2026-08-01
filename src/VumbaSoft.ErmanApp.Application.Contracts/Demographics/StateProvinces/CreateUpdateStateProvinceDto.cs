@@ -15,11 +15,11 @@ public class CreateUpdateStateProvinceDto
     public long Population { get; set; }
 
     [StringLength(StateProvinceConsts.MaxRemarksLength)]
-    public string Remarks { get; set; }
+    public string? Remarks { get; set; }
 
     [StringLength(StateProvinceConsts.MaxRegionCodeLength)]
-    public string RegionCode { get; set; }
+    public string? RegionCode { get; set; }
 
     [StringLength(StateProvinceConsts.MaxStateProvinceCodeLength)]
-    public string StateProvinceCode { get; set; }
+    public string? StateProvinceCode { get; set; }
 }
