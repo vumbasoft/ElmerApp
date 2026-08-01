@@ -20,5 +20,6 @@
         <Project Path="test/VumbaSoft.ErmanApp.TestBase/VumbaSoft.ErmanApp.TestBase.csproj" />
         <Project Path="test/VumbaSoft.ErmanApp.Domain.Tests/VumbaSoft.ErmanApp.Domain.Tests.csproj" />
         <Project Path="test/VumbaSoft.ErmanApp.HttpApi.Client.ConsoleTestApp/VumbaSoft.ErmanApp.HttpApi.Client.ConsoleTestApp.csproj" />
+        <Project Path="test/VumbaSoft.ErmanApp.Web.E2ETests/VumbaSoft.ErmanApp.Web.E2ETests.csproj" />
     </Folder>
 </Solution>

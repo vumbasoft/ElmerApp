@@ -9,13 +9,13 @@ public class Continent : FullAuditedAggregateRoot<Guid>
 {
     public virtual string Name { get; private set; }
     public virtual long Population { get; private set; }
-    public virtual string Remarks { get; private set; }
+    public virtual string? Remarks { get; private set; }
 
     protected Continent()
     {
     }
 
-    public Continent(Guid id, [NotNull] string name, long population = 0, string remarks = null)
+    public Continent(Guid id, [NotNull] string name, long population = 0, string? remarks = null)
         : base(id)
     {
         SetName(name);
@@ -35,7 +35,7 @@ public class Continent : FullAuditedAggregateRoot<Guid>
         return this;
     }
 
-    public Continent SetRemarks(string remarks)
+    public Continent SetRemarks(string? remarks)
     {
         Remarks = Check.Length(remarks, nameof(remarks), ContinentConsts.MaxRemarksLength);
         return this;

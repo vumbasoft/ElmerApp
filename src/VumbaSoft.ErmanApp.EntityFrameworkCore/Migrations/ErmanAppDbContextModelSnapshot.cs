@@ -2163,7 +2163,6 @@ namespace VumbaSoft.ErmanApp.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("Remarks")
-                        .IsRequired()
                         .HasMaxLength(1024)
                         .HasColumnType("nvarchar(1024)");
 

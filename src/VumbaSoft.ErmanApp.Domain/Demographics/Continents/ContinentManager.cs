@@ -13,7 +13,7 @@ public class ContinentManager : DomainService
         _continentRepository = continentRepository;
     }
 
-    public async Task<Continent> CreateAsync(string name, long population = 0, string remarks = null)
+    public async Task<Continent> CreateAsync(string name, long population = 0, string? remarks = null)
     {
         if (await _continentRepository.FindByNameAsync(name) != null)
         {

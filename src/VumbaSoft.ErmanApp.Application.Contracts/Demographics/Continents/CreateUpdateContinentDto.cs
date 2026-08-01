@@ -11,5 +11,5 @@ public class CreateUpdateContinentDto
     public long Population { get; set; }
 
     [StringLength(ContinentConsts.MaxRemarksLength)]
-    public string Remarks { get; set; }
+    public string? Remarks { get; set; }
 }
