@@ -39,6 +39,11 @@ public class DistrictCityManager : DomainService
             throw new UserFriendlyException($"A district/city with name '{name}' already exists!");
         }
 
+        if (population < 0)
+        {
+            throw new UserFriendlyException("Population cannot be less than zero.");
+        }
+
         return new DistrictCity(
             GuidGenerator.Create(),
             stateProvinceId,

@@ -40,6 +40,11 @@ public class LocalityManager : DomainService
             throw new UserFriendlyException($"A locality with name '{name}' already exists!");
         }
 
+        if (population < 0)
+        {
+            throw new UserFriendlyException("Population cannot be less than zero.");
+        }
+
         return new Locality(
             GuidGenerator.Create(),
             districtCityId,

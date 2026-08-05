@@ -136,7 +136,7 @@ public abstract class CountryManager_Tests<TStartupModule> : ErmanAppDomainTestB
     {
         var regionId = await CreateRegionAsync();
 
-        await Assert.ThrowsAsync<ArgumentException>(async () =>
+        await Assert.ThrowsAsync<UserFriendlyException>(async () =>
         {
             await _countryManager.CreateAsync(regionId, "Test Country " + Guid.NewGuid(), -1);
         });

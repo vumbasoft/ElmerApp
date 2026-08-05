@@ -137,7 +137,7 @@ public abstract class DistrictCityManager_Tests<TStartupModule> : ErmanAppDomain
     {
         var stateProvinceId = await CreateStateProvinceAsync();
 
-        await Assert.ThrowsAsync<ArgumentException>(async () =>
+        await Assert.ThrowsAsync<UserFriendlyException>(async () =>
         {
             await _districtCityManager.CreateAsync(stateProvinceId, "Test DistrictCity " + Guid.NewGuid(), -1);
         });

@@ -38,6 +38,11 @@ public class StateProvinceManager : DomainService
             throw new UserFriendlyException($"A state/province with name '{name}' already exists!");
         }
 
+        if (population < 0)
+        {
+            throw new UserFriendlyException("Population cannot be less than zero.");
+        }
+
         return new StateProvince(
             GuidGenerator.Create(),
             countryId,

@@ -1,7 +1,10 @@
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using JetBrains.Annotations;
 using Volo.Abp;
 using Volo.Abp.Domain.Entities.Auditing;
+using VumbaSoft.ErmanApp.Demographics.Countries;
 
 namespace VumbaSoft.ErmanApp.Demographics.Regions;
 
@@ -11,14 +14,17 @@ public class Region : FullAuditedAggregateRoot<Guid>
     public virtual string Name { get; private set; }
     public virtual long Population { get; private set; }
     public virtual string? Remarks { get; private set; }
+    public virtual ICollection<Country> Countries { get; protected set; }
 
     protected Region()
     {
+        Countries = new Collection<Country>();
     }
 
     public Region(Guid id, Guid subcontinentId, [NotNull] string name, long population = 0, string? remarks = null)
         : base(id)
     {
+        Countries = new Collection<Country>();
         SetSubcontinentId(subcontinentId);
         SetName(name);
         SetPopulation(population);

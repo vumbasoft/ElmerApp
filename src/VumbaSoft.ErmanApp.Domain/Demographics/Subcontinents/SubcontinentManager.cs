@@ -33,6 +33,11 @@ public class SubcontinentManager : DomainService
             throw new UserFriendlyException($"A subcontinent with name '{name}' already exists!");
         }
 
+        if (population < 0)
+        {
+            throw new UserFriendlyException("Population cannot be less than zero.");
+        }
+
         return new Subcontinent(
             GuidGenerator.Create(),
             continentId,

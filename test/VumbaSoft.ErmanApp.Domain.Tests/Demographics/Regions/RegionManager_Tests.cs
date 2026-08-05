@@ -110,7 +110,7 @@ public abstract class RegionManager_Tests<TStartupModule> : ErmanAppDomainTestBa
     {
         var subcontinentId = await CreateSubcontinentAsync();
 
-        await Assert.ThrowsAsync<ArgumentException>(async () =>
+        await Assert.ThrowsAsync<UserFriendlyException>(async () =>
         {
             await _regionManager.CreateAsync(subcontinentId, "Test Region " + Guid.NewGuid(), -1);
         });

@@ -1,7 +1,10 @@
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using JetBrains.Annotations;
 using Volo.Abp;
 using Volo.Abp.Domain.Entities.Auditing;
+using VumbaSoft.ErmanApp.Demographics.StateProvinces;
 
 namespace VumbaSoft.ErmanApp.Demographics.Countries;
 
@@ -21,9 +24,11 @@ public class Country : FullAuditedAggregateRoot<Guid>
     public virtual string? Currency { get; private set; }
     public virtual string? Emoji { get; private set; }
     public virtual string? EmojiU { get; private set; }
+    public virtual ICollection<StateProvince> StateProvinces { get; protected set; }
 
     protected Country()
     {
+        StateProvinces = new Collection<StateProvince>();
     }
 
     public Country(
@@ -44,6 +49,7 @@ public class Country : FullAuditedAggregateRoot<Guid>
         string? emojiU = null)
         : base(id)
     {
+        StateProvinces = new Collection<StateProvince>();
         SetRegionId(regionId);
         SetName(name);
         SetPopulation(population);

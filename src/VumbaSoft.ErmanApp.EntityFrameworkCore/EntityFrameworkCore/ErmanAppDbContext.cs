@@ -1,29 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-using Volo.Abp.AuditLogging.EntityFrameworkCore;
-using VumbaSoft.ErmanApp.Authors;
-using VumbaSoft.ErmanApp.Books;
-using VumbaSoft.ErmanApp.Demographics.Continents;
-using VumbaSoft.ErmanApp.Demographics.Subcontinents;
-using VumbaSoft.ErmanApp.Demographics.Regions;
-using VumbaSoft.ErmanApp.Demographics.Countries;
-using VumbaSoft.ErmanApp.Demographics.StateProvinces;
-using VumbaSoft.ErmanApp.Demographics.DistrictCities;
-using VumbaSoft.ErmanApp.Demographics.Localities;
-using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
-using Volo.Abp.BlobStoring.Database.EntityFrameworkCore;
-using Volo.Abp.Data;
-using Volo.Abp.DependencyInjection;
-using Volo.Abp.EntityFrameworkCore;
-using Volo.Abp.EntityFrameworkCore.Modeling;
-using Volo.Abp.FeatureManagement.EntityFrameworkCore;
-using Volo.Abp.Identity;
-using Volo.Abp.Identity.EntityFrameworkCore;
-using Volo.Abp.PermissionManagement.EntityFrameworkCore;
-using Volo.Abp.SettingManagement.EntityFrameworkCore;
-using Volo.Abp.OpenIddict.EntityFrameworkCore;
-using Volo.Abp.TenantManagement;
-using Volo.Abp.TenantManagement.EntityFrameworkCore;
-
 namespace VumbaSoft.ErmanApp.EntityFrameworkCore;
 
 [ReplaceDbContext(typeof(IIdentityDbContext))]
@@ -143,7 +117,7 @@ public class ErmanAppDbContext :
             b.Property(x => x.Name).IsRequired().HasMaxLength(SubcontinentConsts.MaxNameLength);
             b.Property(x => x.Remarks).HasMaxLength(SubcontinentConsts.MaxRemarksLength);
             b.HasIndex(x => x.Name);
-            b.HasOne<Continent>().WithMany().HasForeignKey(x => x.ContinentId).IsRequired();
+            b.HasOne<Continent>().WithMany(x => x.Subcontinents).HasForeignKey(x => x.ContinentId).IsRequired();
         });
 
         builder.Entity<Region>(b =>
@@ -154,7 +128,7 @@ public class ErmanAppDbContext :
             b.Property(x => x.Name).IsRequired().HasMaxLength(RegionConsts.MaxNameLength);
             b.Property(x => x.Remarks).HasMaxLength(RegionConsts.MaxRemarksLength);
             b.HasIndex(x => x.Name);
-            b.HasOne<Subcontinent>().WithMany().HasForeignKey(x => x.SubcontinentId).IsRequired();
+            b.HasOne<Subcontinent>().WithMany(x => x.Regions).HasForeignKey(x => x.SubcontinentId).IsRequired();
         });
 
         builder.Entity<Country>(b =>
@@ -175,7 +149,7 @@ public class ErmanAppDbContext :
             b.Property(x => x.Emoji).HasMaxLength(CountryConsts.MaxEmojiLength);
             b.Property(x => x.EmojiU).HasMaxLength(CountryConsts.MaxEmojiULength);
             b.HasIndex(x => x.Name);
-            b.HasOne<Region>().WithMany().HasForeignKey(x => x.RegionId).IsRequired();
+            b.HasOne<Region>().WithMany(x => x.Countries).HasForeignKey(x => x.RegionId).IsRequired();
         });
 
         builder.Entity<StateProvince>(b =>
@@ -188,7 +162,7 @@ public class ErmanAppDbContext :
             b.Property(x => x.RegionCode).HasMaxLength(StateProvinceConsts.MaxRegionCodeLength);
             b.Property(x => x.StateProvinceCode).HasMaxLength(StateProvinceConsts.MaxStateProvinceCodeLength);
             b.HasIndex(x => x.Name);
-            b.HasOne<Country>().WithMany().HasForeignKey(x => x.CountryId).IsRequired();
+            b.HasOne<Country>().WithMany(x => x.StateProvinces).HasForeignKey(x => x.CountryId).IsRequired();
         });
 
         builder.Entity<DistrictCity>(b =>
@@ -202,7 +176,7 @@ public class ErmanAppDbContext :
             b.Property(x => x.Latitude).HasPrecision(DistrictCityConsts.LatitudePrecision, DistrictCityConsts.LatLngScale);
             b.Property(x => x.Longitude).HasPrecision(DistrictCityConsts.LongitudePrecision, DistrictCityConsts.LatLngScale);
             b.HasIndex(x => x.Name);
-            b.HasOne<StateProvince>().WithMany().HasForeignKey(x => x.StateProvinceId).IsRequired();
+            b.HasOne<StateProvince>().WithMany(x => x.DistrictCities).HasForeignKey(x => x.StateProvinceId).IsRequired();
         });
 
         builder.Entity<Locality>(b =>
@@ -217,7 +191,7 @@ public class ErmanAppDbContext :
             b.Property(x => x.Latitude).HasPrecision(LocalityConsts.LatitudePrecision, LocalityConsts.LatLngScale);
             b.Property(x => x.Longitude).HasPrecision(LocalityConsts.LongitudePrecision, LocalityConsts.LatLngScale);
             b.HasIndex(x => x.Name);
-            b.HasOne<DistrictCity>().WithMany().HasForeignKey(x => x.DistrictCityId).IsRequired();
+            b.HasOne<DistrictCity>().WithMany(x => x.Localities).HasForeignKey(x => x.DistrictCityId).IsRequired();
         });
 
         //builder.Entity<YourEntity>(b =>

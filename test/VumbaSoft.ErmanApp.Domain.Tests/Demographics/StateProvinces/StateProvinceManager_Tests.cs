@@ -129,7 +129,7 @@ public abstract class StateProvinceManager_Tests<TStartupModule> : ErmanAppDomai
     {
         var countryId = await CreateCountryAsync();
 
-        await Assert.ThrowsAsync<ArgumentException>(async () =>
+        await Assert.ThrowsAsync<UserFriendlyException>(async () =>
         {
             await _stateProvinceManager.CreateAsync(countryId, "Test StateProvince " + Guid.NewGuid(), -1);
         });

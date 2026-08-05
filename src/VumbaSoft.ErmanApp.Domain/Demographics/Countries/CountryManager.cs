@@ -46,6 +46,11 @@ public class CountryManager : DomainService
             throw new UserFriendlyException($"A country with name '{name}' already exists!");
         }
 
+        if (population < 0)
+        {
+            throw new UserFriendlyException("Population cannot be less than zero.");
+        }
+
         return new Country(
             GuidGenerator.Create(),
             regionId,

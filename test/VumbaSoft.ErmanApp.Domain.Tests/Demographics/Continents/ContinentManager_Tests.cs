@@ -67,7 +67,7 @@ public abstract class ContinentManager_Tests<TStartupModule> : ErmanAppDomainTes
     [Fact]
     public async Task Should_Not_Create_A_Continent_With_Negative_Population()
     {
-        await Assert.ThrowsAsync<ArgumentException>(async () =>
+        await Assert.ThrowsAsync<UserFriendlyException>(async () =>
         {
             await _continentManager.CreateAsync("Test Continent " + Guid.NewGuid(), -1);
         });

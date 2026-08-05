@@ -1,7 +1,10 @@
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using JetBrains.Annotations;
 using Volo.Abp;
 using Volo.Abp.Domain.Entities.Auditing;
+using VumbaSoft.ErmanApp.Demographics.Localities;
 
 namespace VumbaSoft.ErmanApp.Demographics.DistrictCities;
 
@@ -14,9 +17,11 @@ public class DistrictCity : FullAuditedAggregateRoot<Guid>
     public virtual string? CountryCode { get; private set; }
     public virtual decimal Latitude { get; private set; }
     public virtual decimal Longitude { get; private set; }
+    public virtual ICollection<Locality> Localities { get; protected set; }
 
     protected DistrictCity()
     {
+        Localities = new Collection<Locality>();
     }
 
     public DistrictCity(
@@ -30,6 +35,7 @@ public class DistrictCity : FullAuditedAggregateRoot<Guid>
         decimal longitude = 0)
         : base(id)
     {
+        Localities = new Collection<Locality>();
         SetStateProvinceId(stateProvinceId);
         SetName(name);
         SetPopulation(population);

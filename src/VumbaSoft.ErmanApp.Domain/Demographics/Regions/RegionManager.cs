@@ -33,6 +33,11 @@ public class RegionManager : DomainService
             throw new UserFriendlyException($"A region with name '{name}' already exists!");
         }
 
+        if (population < 0)
+        {
+            throw new UserFriendlyException("Population cannot be less than zero.");
+        }
+
         return new Region(
             GuidGenerator.Create(),
             subcontinentId,

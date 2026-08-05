@@ -146,7 +146,7 @@ public abstract class LocalityManager_Tests<TStartupModule> : ErmanAppDomainTest
     {
         var districtCityId = await CreateDistrictCityAsync();
 
-        await Assert.ThrowsAsync<ArgumentException>(async () =>
+        await Assert.ThrowsAsync<UserFriendlyException>(async () =>
         {
             await _localityManager.CreateAsync(districtCityId, "Test Locality " + Guid.NewGuid(), -1);
         });
